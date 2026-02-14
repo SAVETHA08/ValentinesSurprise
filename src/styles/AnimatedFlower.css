@@ -1,0 +1,81 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.fullscreen-lottie {
+  position: fixed;
+  /* 👈 key for true fullscreen */
+  inset: 0;
+  /* top:0 right:0 bottom:0 left:0 */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.marquee-container {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+    z-index: 3;
+}
+
+.marquee-text {
+  margin-bottom: 50px;
+  font-size: 45px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  font-family: 'Dancing Script', cursive;
+  /* font-style: italic !important; */
+
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #ff001e,
+    #ffffff
+  );
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Center final text */
+.final-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #0b0b0b;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+  animation: fadeIn 1.2s ease;
+}
+
+

@@ -1,0 +1,157 @@
+/* Container */
+.floating-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  /* 💗 Hearts Background */
+.hearts-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .heart {
+    position: absolute;
+    bottom: -20px;
+    color: rgba(232, 9, 120, 0.6);
+    animation: heartFloat linear infinite;
+    filter: blur(0.3px);
+  }
+
+
+@keyframes heartFloat {
+    from {
+      transform: translateY(0) scale(0.8);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-110vh) scale(1.3);
+      opacity: 0;
+    }
+  }  
+    
+.floating-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* background: radial-gradient(
+    circle at center,
+    rgba(208, 98, 98, 0.15),
+    rgba(168, 143, 143, 0.5) 
+  ); */
+
+  }
+  
+  /* Image card */
+  .floating-image {
+    /* width: auto;
+    height: auto; */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     
+  /* object-position: center; */
+  
+    /* border-radius: 5px; */
+    /* border: 5px solid rgba(249, 248, 246, 0.9); */
+  
+   /* box-shadow:
+      0 0 15px rgba(227, 7, 7, 0.6),
+      0 20px 40px rgba(0, 0, 0, 0.6); */
+  
+    animation:
+      floatup 8s linear forwards,
+      fadeIn 1s ease;
+  }
+  
+  /* Floating motion */
+  /* @keyframes float {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(10px, -20px) rotate(1deg);
+    }
+    50% {
+      transform: translate(-10px, -40px) rotate(-1deg);
+    }
+    75% {
+      transform: translate(15px, -20px) rotate(2deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  } */
+
+  /* Floating slide-up and blur animation */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(20%);
+      opacity: 0;
+      filter: blur(2px);
+    }
+    20% {
+      opacity: 1;
+      filter: blur(0);
+    }
+    80% {
+      opacity: 1;
+      filter: blur(0);
+    }
+    100% {
+      transform: translateY(-20%);
+      opacity: 0;
+      filter: blur(2px);
+    }
+  }
+  
+
+.floating-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: floatUp 3s linear infinite;
+}
+
+  
+  /* Smooth image entry */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    .floating-image {
+      width: 220px;
+      height: 320px;
+    }
+  }
+  
+
+  .floating-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 215, 0, 0.15);
+    filter: blur(40px);
+    z-index: -1;
+  }
+  
