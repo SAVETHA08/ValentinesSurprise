@@ -16,26 +16,13 @@ function FloatingImage() {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    let isMounted = true;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
   
-    const runSlideshow = (currentIndex) => {
-      setTimeout(() => {
-        if (!isMounted) return;
-  
-        setIndex((prev) => {
-          const next = (prev + 1) % images.length;
-          runSlideshow(next);
-          return next;
-        });
-      }, 3000);
-    };
-  
-    runSlideshow(0);
-  
-    return () => {
-      isMounted = false;
-    };
+    return () => clearInterval(interval); // cleanup
   }, []);
+  
 
   const hearts = useMemo(() => {
     return Array.from({ length: 20 }).map((_, i) => ({
@@ -70,6 +57,7 @@ function FloatingImage() {
 
     <div className="floating-wrapper">
       <img
+      key={images[index]}
         src={images[index]}
         alt="floating"
         className="floating-image"
