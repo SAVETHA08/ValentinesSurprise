@@ -22,8 +22,8 @@ body {
 }
 
 .marquee-container {
-  position: absolute;
-  bottom: 20px;
+  /* position: absolute;
+  bottom: 20px; */
   width: 100%;
   text-align: center;
   pointer-events: none;
@@ -76,6 +76,8 @@ body {
 font-family:Verdana, Geneva, Tahoma, sans-serif;
 
   animation: fadeIn 1.2s ease;
+  background: linear-gradient(135deg, #efb8b8, #f4c1d0);;
+
 }
 
 

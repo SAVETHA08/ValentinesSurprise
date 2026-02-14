@@ -35,9 +35,10 @@
   .quiz-container {
     text-align: center;
     padding: 20px;
-    background-color: #edbec7;
+    /* background-color: #edbec7; */
     /* width: 100vw; */
     height: 100vh;
+    background: linear-gradient(135deg, #efb8b8, #f4c1d0);;
   }
 
 .question {
@@ -111,8 +112,14 @@
   .quiz-result {
     text-align: center;
     font-size: 1.6rem;
-  }
-
+    background: linear-gradient(135deg, #efb8b8, #f4c1d0);;
+  
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
   .quiz-warning {
     margin-top: 16px;
     color: #f30e38;
@@ -127,5 +134,25 @@
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
   }
-  
+
+  .youscore {
+    margin: 0px 0px 20px 0px;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .psentence {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .pquestion {
+    color: #f30e38;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  .yes-btn, .no-btn {
+    margin: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
   

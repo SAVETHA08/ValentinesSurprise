@@ -17,6 +17,12 @@ function ValentineSuccess() {
       <div className="lottie-wrapper">
         <Lottie animationData={celebrationAnimation} loop={true} />
       </div>
+
+      <div className="marquee-container">
+          <div className="marquee-text">
+            Happy Valentine's Day
+          </div>
+        </div>
     </div>
   );
 }

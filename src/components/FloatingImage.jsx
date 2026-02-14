@@ -15,10 +15,11 @@ function FloatingImage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // change image every 3s
-
+    }, 3000);
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
+  
 
   return (
     <div className="floating-container">

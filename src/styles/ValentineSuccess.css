@@ -12,17 +12,17 @@
   .success-title {
     font-size: 28px;
     font-weight: bold;
-    color: white;
+    color: black;
     margin-bottom: 10px;
   }
   
   .success-subtitle {
     font-size: 22px;
-    color: white;
+    color: #dc1313;;
     margin-bottom: 30px;
   }
   
   .lottie-wrapper {
-    width: 250px;
+    width: 50%;
   }
   

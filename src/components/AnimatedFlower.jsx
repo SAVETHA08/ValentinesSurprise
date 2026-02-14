@@ -19,15 +19,20 @@ export default function AnimatedFlower() {
   }, []);
 
   useEffect(() => {
-    const SLIDESHOW_DURATION = 6 * 3500; // 6 images × 3s each
-
-    const timer = setTimeout(() => {
-      setSlideShow(false);
-      setQuizText(true);
-    }, SLIDESHOW_DURATION);
-
-    return () => clearTimeout(timer);
+    const startTimer = setTimeout(() => {
+      setSlideShow(true);
+  
+      const stopTimer = setTimeout(() => {
+        setSlideShow(false);
+        setQuizText(true);
+      }, 6 * 3000); // 6 images × 3s
+  
+      return () => clearTimeout(stopTimer);
+    }, 3000);
+  
+    return () => clearTimeout(startTimer);
   }, []);
+  
 
 
   return (

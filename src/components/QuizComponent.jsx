@@ -2,6 +2,7 @@ import { useState } from "react";
 import quizData from "./quizData";
 import { useNavigate } from "react-router-dom";
 import ValentineSuccess from "./ValentineSuccess";
+// import '.././styles/QuizComponent.css;'
 
 
 export default function QuizComponent() {
@@ -34,7 +35,7 @@ export default function QuizComponent() {
             return ans === quizData[idx].correctIndex ? total + 1 : total;
         }, 0);
 
-        if (score < 3) {
+        if (score < 5) {
             setWarning("Try again… you should know me better than this! 😜");
             return;
         }
@@ -71,11 +72,11 @@ export default function QuizComponent() {
         return (
             <div className="quiz-result">
                 {/* <h2>❤️ Quiz Completed ❤️</h2> */}
-                <h2>
+                <p className="youscore">
                     Your Score: <strong>{score}</strong> / {quizData.length}
-                </h2>
-                <p>Now I have one last question for you…</p>
-                <p>Will you be my Valentine? ❤️</p>
+                </p>
+                <p className="psentence">Now I have one last question for you!</p>
+                <p className="pquestion">Will you be my Valentine? ❤️</p>
                 <div className="valentine-buttons">
                     <button className="yes-btn" onClick={handleYes}>
                         Yes ❤️
