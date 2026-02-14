@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import img1 from "../assets/firstmeet.jpg";
 import img2 from "../assets/choci.jpg";
 import img3 from "../assets/birthday.jpg";
@@ -11,7 +11,7 @@ import "../styles/FloatingImage.css";
 
 function FloatingImage() {
 
-  const images = [img6, img1, img2, img3, img4, img5];
+  const images = [img1, img2, img3, img4, img5, img6];
   const [index, setIndex] = useState(0);
   const intervalRef = useRef(null);
 
@@ -36,27 +36,37 @@ function FloatingImage() {
       isMounted = false;
     };
   }, []);
+
+  const hearts = useMemo(() => {
+    return Array.from({ length: 20 }).map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: `${8 + Math.random() * 6}s`,
+      size: `${12 + Math.random() * 18}px`,
+    }));
+  }, []);
+  
   
 
   return (
-    <div className="floating-container" >
+    <div className="floating-container">
       {/* 💗 Background Hearts */}
       <div className="hearts-background">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <span
-            key={i}
-            className="heart"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${8 + Math.random() * 6}s`,
-              fontSize: `${12 + Math.random() * 18}px`,
-            }}
-          >
-            ♥
-            {/* ❀ */}
-          </span>
-        ))}
-      </div>
+  {hearts.map((heart) => (
+    <span
+      key={heart.id}
+      className="heart"
+      style={{
+        left: heart.left,
+        animationDuration: heart.duration,
+        fontSize: heart.size,
+      }}
+    >
+      ♥
+    </span>
+  ))}
+</div>
+
 
     <div className="floating-wrapper">
       <img
