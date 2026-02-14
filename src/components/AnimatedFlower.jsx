@@ -11,12 +11,6 @@ export default function AnimatedFlower() {
   const [quizText, setQuizText] = useState(false);
   const [startQuiz, setStartQuiz] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSlideShow(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const startTimer = setTimeout(() => {
@@ -46,7 +40,10 @@ export default function AnimatedFlower() {
         />
       )}
 
-      {sildeShow && <FloatingImage/> }
+      {/* {sildeShow && <FloatingImage/> } */}
+
+      <FloatingImage visible={sildeShow} />
+
 
       {/* {sildeShow && (
         <div className="marquee-container">
