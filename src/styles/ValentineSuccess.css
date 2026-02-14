@@ -10,6 +10,7 @@
   }
   
   .success-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 28px;
     font-weight: bold;
     color: black;
@@ -17,6 +18,7 @@
   }
   
   .success-subtitle {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 22px;
     color: #dc1313;;
     margin-bottom: 30px;
