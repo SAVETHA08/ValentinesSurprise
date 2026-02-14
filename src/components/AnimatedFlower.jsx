@@ -40,9 +40,9 @@ export default function AnimatedFlower() {
         />
       )}
 
-      {/* {sildeShow && <FloatingImage/> } */}
+      {sildeShow && <FloatingImage/> }
 
-      <FloatingImage visible={sildeShow} />
+      {/* <FloatingImage visible={sildeShow} /> */}
 
 
       {/* {sildeShow && (

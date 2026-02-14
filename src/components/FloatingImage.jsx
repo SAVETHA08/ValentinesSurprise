@@ -9,7 +9,7 @@ import img6 from "../assets/shades.jpg";
 import "../styles/FloatingImage.css";
 
 
-function FloatingImage({ visible }) {
+function FloatingImage() {
 
   const images = [img6, img1, img2, img3, img4, img5];
   const [index, setIndex] = useState(0);
@@ -39,7 +39,7 @@ function FloatingImage({ visible }) {
   
 
   return (
-    <div className="floating-container" style={{ display: visible ? "block" : "none" }}>
+    <div className="floating-container" >
       {/* 💗 Background Hearts */}
       <div className="hearts-background">
         {Array.from({ length: 20 }).map((_, i) => (
