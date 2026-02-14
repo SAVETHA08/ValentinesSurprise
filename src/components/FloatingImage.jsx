@@ -16,17 +16,27 @@ function FloatingImage({ visible }) {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (intervalRef.current) return; // prevent double interval
-
-    intervalRef.current = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-
-    return () => {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
+    let isMounted = true;
+  
+    const runSlideshow = (currentIndex) => {
+      setTimeout(() => {
+        if (!isMounted) return;
+  
+        setIndex((prev) => {
+          const next = (prev + 1) % images.length;
+          runSlideshow(next);
+          return next;
+        });
+      }, 3000);
     };
-  }, [images.length]);
+  
+    runSlideshow(0);
+  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+  
 
   return (
     <div className="floating-container" style={{ display: visible ? "block" : "none" }}>
