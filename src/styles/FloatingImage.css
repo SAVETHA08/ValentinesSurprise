@@ -60,7 +60,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-    animation: floatUp 6s linear infinite;
+    animation: floatUp linear infinite;
     /* transition: opacity 0.5s ease-in-out; */
     opacity: 1;
     
@@ -112,7 +112,7 @@
       filter: blur(0);
     }
     100% {
-      transform: translateY(-20%);
+      transform: translate(var(--x-drift, 0), -20%);
       opacity: 0;
       filter: blur(2px);
     }

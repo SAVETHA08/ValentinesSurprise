@@ -14,6 +14,12 @@ function FloatingImage() {
   const images = [img1, img2, img3, img4, img5, img6];
   const [index, setIndex] = useState(0);
   const intervalRef = useRef(null);
+  const [floatDuration, setFloatDuration] = useState("3s");
+
+useEffect(() => {
+  setFloatDuration(`${3 + Math.random() * 2}s`); // 3s to 5s
+}, [index]);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +67,11 @@ function FloatingImage() {
         src={images[index]}
         alt="floating"
         className="floating-image"
+        style={{
+          animationDuration: floatDuration,
+          "--x-drift": `${Math.random() * 20 - 10}px`, // -10px to +10px horizontal drift
+        }}
+      
       />
     </div>
     </div>
